@@ -1,31 +1,48 @@
-public partial class Registro : ContentPage
+using System;
+using Microsoft.Maui.Controls;
+
+namespace glasluisaExamen.Views
 {
-    private object monthlyPaymentEntry;
-
-    public string Username { get; private set; }
-
-    public Registro(string username)
+    public partial class Registro : ContentPage
     {
-        InitializeComponent();
-        Username = username;
-        BindingContext = this;
-    }
+        private string usuarioConectado;
+        private object txtNombre;
+        private object txtApellido;
+        private object pkVA;
+        private object datePicker;
+        private object pkCiudad;
+        private object txtMontoInicial;
+        private object txtCuotaMensual;
 
-    private void InitializeComponent()
-    {
-        throw new NotImplementedException();
-    }
+        public Registro(string usuario)
+        {
+            InitializeComponent();
+            usuarioConectado = usuario;
+            lblUsuarioConectado.Text = $"Usuario Conectado: {usuarioConectado}";
+        }
 
-    private void OnCalculateClicked(object sender, EventArgs e)
-    {
-        double initialAmount = Convert.ToDouble(initialAmountEntry.Text);
-        double totalCost = 300;
-        double payment = (totalCost - (totalCost * 0.15)) / 3 * 1.05;
-        monthlyPaymentEntry.Text = payment.ToString("F2");
-    }
+        private void btnCalcularPago_Clicked(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtMontoInicial.Text, out decimal montoInicial))
+            {
+                decimal total = 300m;
+                decimal porcentajeInicial = 0.15m;
+                decimal pagoInicial = total * porcentajeInicial;
+                decimal saldoRestante = total - pagoInicial;
+                decimal cuota = (saldoRestante * 1.05m) / 3;
 
-    private async void OnSummaryClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new SummaryPage(/* par·metros necesarios */));
+                txtCuotaMensual.Text = cuota.ToString("0.00");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingrese un monto v√°lido.", "OK");
+            }
+        }
+
+        private async void btnVerResumen_Clicked(object sender, EventArgs e)
+        {
+            var resumen = new Resumen(usuarioConectado, txtNombre.Text, txtApellido.Text, pkVA.SelectedItem?.ToString(), datePicker.Date, pkCiudad.SelectedItem?.ToString(), txtMontoInicial.Text, txtCuotaMensual.Text);
+            await Navigation.PushAsync(resumen);
+        }
     }
 }
