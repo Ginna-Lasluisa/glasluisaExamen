@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="glasluisaExamen.Views.Login"
+             Title="Login">
+    <VerticalStackLayout
+        Spacing="20"
+        Padding="25">
+        
+        <Label 
+            Text="EXAMEN"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="Center"
+            TextColor="red"
+            FontSize="20"/>
+
+        <Image Source="LOGO-UISRAEL-768x209.png"
+        WidthRequest="150"/>
+        
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="1" Spacing="20">
+                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
+                <Entry x:Name="estudiante2024 " Placeholder="uisrael2024" IsPassword="True"/>
+                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
+                <Entry x:Name="examen1 " Placeholder="parcial1" IsPassword="True"/>
+                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
+                <Entry x:Name="NombreEstudiante " Placeholder="2024" IsPassword="True"/>
+
+            </StackLayout>
+        </Grid>
+
+        <Button x:Name="btnIniciarSesion" 
+                    Text="INICIAR SESION"
+                    Clicked="btnIniciarSesion_Clicked"/>
+
+        <Button Text="Acerca de" 
+                Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
+    

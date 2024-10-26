@@ -1,0 +1,51 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             x:Class="glasluisaExamen.SummaryPage">
+
+    <Grid Padding="25">
+        <Label Text="RESUMEN" FontSize="22" TextColor="Blue" HorizontalOptions="Center"/>
+        <Label Text="{Binding Username}" HorizontalOptions="Center" VerticalOptions="Start"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Nombre:" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1"/>
+
+            <Label Text="Apellido:" Grid.Row="1" Grid.Column="0"/>
+            <Label Text="{Binding Apellido}" Grid.Row="1" Grid.Column="1"/>
+
+            <Label Text="VA:" Grid.Row="2" Grid.Column="0"/>
+            <Label Text="{Binding VA}" Grid.Row="2" Grid.Column="1"/>
+
+            <Label Text="Fecha:" Grid.Row="3" Grid.Column="0"/>
+            <Label Text="{Binding Fecha}" Grid.Row="3" Grid.Column="1"/>
+
+            <Label Text="Ciudad:" Grid.Row="4" Grid.Column="0"/>
+            <Label Text="{Binding Ciudad}" Grid.Row="4" Grid.Column="1"/>
+
+            <Label Text="Monto Inicial:" Grid.Row="5" Grid.Column="0"/>
+            <Label Text="{Binding MontoInicial}" Grid.Row="5" Grid.Column="1"/>
+
+            <Label Text="Cuota Mensual:" Grid.Row="6" Grid.Column="0"/>
+            <Label Text="{Binding CuotaMensual}" Grid.Row="6" Grid.Column="1"/>
+
+            <Label Text="Pago Total:" Grid.Row="7" Grid.Column="0"/>
+            <Label Text="{Binding PagoTotal}" Grid.Row="7" Grid.Column="1"/>
+
+            <Button Text="Cerrar sesión" Clicked="OnLogoutClicked" Grid.Row="8" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Grid>
+</ContentPage>
