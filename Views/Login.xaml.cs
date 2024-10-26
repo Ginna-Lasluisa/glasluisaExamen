@@ -1,34 +1,40 @@
-public partial class LoginPage : ContentPage
+using System.Collections.Generic;
+using Microsoft.Maui.Controls;
+
+namespace glasluisaExamen.Views
 {
-    private readonly Dictionary<string, string> users = new()
+    public partial class Login : ContentPage
     {
-        { "estudiante2024", "uisrael2024" },
-        { "examen1", "parcial1" },
-        { "NombreEstudiante", "2024" }
-    };
-
-    public LoginPage()
-    {
-        InitializeComponent();
-    }
-
-    private async void OnLoginClicked(object sender, EventArgs e)
-    {
-        var username = usernameEntry.Text;
-        var password = passwordEntry.Text;
-
-        if (users.TryGetValue(username, out var correctPassword) && correctPassword == password)
+        private readonly Dictionary<string, string> usuarios = new Dictionary<string, string>
         {
-            await Navigation.PushAsync(new Registro(username));
-        }
-        else
-        {
-            await DisplayAlert("Error", "Datos incorrectos", "OK");
-        }
-    }
+            { "estudiante2024", "uisrael2024" },
+            { "examen1", "parcial1" },
+            { "NombreEstudiante", "2024" }
+        };
 
-    private async void OnAboutClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AboutPage());
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private async void btnIniciarSesion_Clicked(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+
+            if (usuarios.TryGetValue(usuario, out string contraseniaCorrecta) && contraseña == contraseniaCorrecta)
+            {
+                await Navigation.PushAsync(new Registro(usuario));
+            }
+            else
+            {
+                await DisplayAlert("Error", "Datos incorrectos", "OK");
+            }
+        }
+
+        private async void btnAcercaDe_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Acercade());
+        }
     }
 }
