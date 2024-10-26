@@ -6,49 +6,59 @@
     <VerticalStackLayout
         Spacing="20"
         Padding="25">
-        
-        <Label 
-            Text="EXAMEN"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="Center"
-            TextColor="red"
-            FontSize="20"/>
-
-        <Image Source="LOGO-UISRAEL-768x209.png"
-        WidthRequest="150"/>
-        
-
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Row="1" Spacing="20">
-                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
-                <Entry x:Name="estudiante2024 " Placeholder="uisrael2024" IsPassword="True"/>
-                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
-                <Entry x:Name="examen1 " Placeholder="parcial1" IsPassword="True"/>
-                <Entry x:Name="usernameEntry" Placeholder="Usuario"/>
-                <Entry x:Name="NombreEstudiante " Placeholder="2024" IsPassword="True"/>
+            <Image Source="LOGO-UISRAEL-768x209.png" 
+                   HorizontalOptions="Center" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="2" />
 
-            </StackLayout>
+            <Label Text="EXAMEN PARCIAL" 
+                   TextColor="Red" 
+                   FontSize="20" 
+                   HorizontalOptions="Center" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="2" />
+
+            <Label Text="Usuario" 
+                   Grid.Row="2" 
+                   Grid.Column="0" />
+
+            <Entry x:Name="txtUsuario"
+                   Placeholder="Ingresa el Usuario"
+                   Grid.Row="2" 
+                   Grid.Column="1" />
+
+            <Label Text="Contraseña" 
+                   Grid.Row="3" 
+                   Grid.Column="0" />
+
+            <Entry x:Name="txtContraseña" 
+                   Placeholder="Ingresa la contraseña"
+                   IsPassword="True" 
+                   Grid.Row="3" 
+                   Grid.Column="1" />
         </Grid>
 
         <Button x:Name="btnIniciarSesion" 
-                    Text="INICIAR SESION"
-                    Clicked="btnIniciarSesion_Clicked"/>
+                Text="Iniciar Sesión"
+                Clicked="btnIniciarSesion_Clicked" />
 
-        <Button Text="Acerca de" 
-                Clicked="Button_Clicked"/>
+        <Button x:Name="btnAcercade"
+                Text="Acerca de" 
+                Clicked="btnAcercaDe_Clicked" />
 
     </VerticalStackLayout>
-</ContentPage>
-    
+</ContentPage> 
