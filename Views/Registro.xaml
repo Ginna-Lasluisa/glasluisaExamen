@@ -1,96 +1,108 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="glasluisaExamen.Views.Registro"
-             Title="Registro">
-    <VerticalStackLayout>
-        <Label 
-            Text="REGISTRO"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="Center"
-            TextColor="blue"
-            FontSize="22"/>
+             x:Class="glasluisaExamen.Views.Resumen"
+             Title="Resumen">
+    <Grid RowSpacing="10" ColumnSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Grid Margin="0,50,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-            <Label Text="Nombre" 
-                   Grid.Row="0" 
-                   Grid.Column="0"/>
-            <Entry x:Name="nameEntry" 
-                   Grid.Row="0" 
-                   Grid.Column="1"/>
-
-            <Label Text="Apellido" 
-                   Grid.Row="1" 
-                   Grid.Column="0"/>
-            <Entry x:Name="surnameEntry" 
-                   Grid.Row="1" 
-                   Grid.Column="1"/>
-
-            <Label Text="Voltiamperio VA" 
-                   Grid.Row="2" 
-                   Grid.Column="0"/>
-            <Picker x:Name="vaPicker" 
-                    Grid.Row="2" 
-                    Grid.Column="1">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>500</x:String>
-                        <x:String>750</x:String>
-                        <x:String>1000</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
-            <Label Text="Fecha" 
-                   Grid.Row="3" 
-                   Grid.Column="0"/>
-            <DatePicker x:Name="datePicker" 
-                   Grid.Row="3" 
-                   Grid.Column="1"/>
-
-            <Label Text="Ciudad" 
-                   Grid.Row="4" 
-                   Grid.Column="0"/>
-            <Picker x:Name="cityPicker" 
-                   Grid.Row="4" 
-                   Grid.Column="1"/>
-
-            <Label Text="Monto Inicial" 
-                   Grid.Row="5" 
-                   Grid.Column="0"/>
-            <Entry x:Name="initialAmountEntry" 
-                   Grid.Row="5" 
-                   Grid.Column="1"/>
-
-            <Button Text="Calcular Pago Mensual" 
-                    Clicked="Button_Clicked"
-                    Grid.Row="6" 
-                    Grid.ColumnSpan="2"/>
-
-            <Label Text="Cuota Mensual:" 
-                   Grid.Row="7" 
-                   Grid.Column="0"/>
-
-            <Entry x:Name="monthlyPaymentEntry" 
-                   IsReadOnly="True" 
-                   Grid.Row="7" 
-                   Grid.Column="1"/>
-        </Grid>
-
-        <Button Text="Ver Resumen" 
-                Clicked="OnSummaryClicked"/>
+        <Label Text="Usuario Conectado: " 
+               Grid.Row="0" 
+               Grid.Column="0" />
         
-        </Grid>
+        <Label x:Name="lblUsuarioConectado" 
+               Grid.Row="0" 
+               Grid.Column="1" />
+
+        <Label Text="RESUMEN" 
+               Grid.Row="1" 
+               Grid.ColumnSpan="2" 
+               FontSize="22" 
+               TextColor="Blue" 
+               HorizontalOptions="Center" />
+
+        <Label Text="Nombre" 
+               Grid.Row="2" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblNombre" 
+               Grid.Row="2" 
+               Grid.Column="1" />
+
+        <Label Text="Apellido" 
+               Grid.Row="3" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblApellido" 
+               Grid.Row="3" 
+               Grid.Column="1" />
+
+        <Label Text="Voltiamperio (VA)" 
+               Grid.Row="4" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblVA" 
+               Grid.Row="4" 
+               Grid.Column="1" />
+
+        <Label Text="Fecha" 
+               Grid.Row="5" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblFecha" 
+               Grid.Row="5" 
+               Grid.Column="1" />
+
+        <Label Text="Ciudad" 
+               Grid.Row="6" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblCiudad" 
+               Grid.Row="6" 
+               Grid.Column="1" />
+
+        <Label Text="Monto Inicial" 
+               Grid.Row="7" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblMontoInicial" 
+               Grid.Row="7" 
+               Grid.Column="1" />
+
+        <Label Text="Cuota Mensual" 
+               Grid.Row="8" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblCuotaMensual" 
+               Grid.Row="8" 
+               Grid.Column="1" />
+
+        <Label Text="Pago Total" 
+               Grid.Row="9" 
+               Grid.Column="0" />
+        
+        <Label x:Name="lblPagoTotal" 
+               Grid.Row="9" 
+               Grid.Column="1" />
+
+        <Button Text="Cerrar Sesión" 
+                Clicked="btnCerrarSesion_Clicked" 
+                Grid.Row="10" 
+                Grid.ColumnSpan="2" 
+                HorizontalOptions="Center" />
+    </Grid>
 </ContentPage>
