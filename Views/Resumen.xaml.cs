@@ -17,7 +17,7 @@ namespace glasluisaExamen.Views
             lblCuotaMensual.Text = cuotaMensual;
 
             decimal monto = 300m;
-            decimal pagoInicial = monto * 0.15m; 
+            decimal pagoInicial = monto * 0.15m;
             decimal saldoRestante = monto - pagoInicial;
             decimal total = pagoInicial + ((saldoRestante * 1.05m) * 3);
 
@@ -26,7 +26,7 @@ namespace glasluisaExamen.Views
 
         private async void btnCerrarSesion_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Login());
+            await Navigation.PopToRootAsync(); // Regresa a la ventana de Login
         }
     }
 }
