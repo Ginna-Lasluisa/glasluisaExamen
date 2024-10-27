@@ -40,8 +40,16 @@
             <DatePicker x:Name="datePicker" Grid.Row="3" Grid.Column="1" />
 
             <Label Text="Ciudad" Grid.Row="4" />
-            <Picker x:Name="pkCiudad" Grid.Row="4" Grid.Column="1" >
+            <Picker x:Name="pkCiudad" Grid.Row="4" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Quito</x:String>
+                        <x:String>Guayaquil</x:String>
+                        <x:String>Cuenca</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
             </Picker>
+
         </Grid>
 
         <Label Text="Monto Inicial" />
