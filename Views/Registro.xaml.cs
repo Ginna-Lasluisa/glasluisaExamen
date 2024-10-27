@@ -6,13 +6,6 @@ namespace glasluisaExamen.Views
     public partial class Registro : ContentPage
     {
         private string usuarioConectado;
-        private object txtNombre;
-        private object txtApellido;
-        private object pkVA;
-        private object datePicker;
-        private object pkCiudad;
-        private object txtMontoInicial;
-        private object txtCuotaMensual;
 
         public Registro(string usuario)
         {
@@ -26,11 +19,9 @@ namespace glasluisaExamen.Views
             if (decimal.TryParse(txtMontoInicial.Text, out decimal montoInicial))
             {
                 decimal total = 300m;
-                decimal porcentajeInicial = 0.15m;
-                decimal pagoInicial = total * porcentajeInicial;
+                decimal pagoInicial = total * 0.15m;
                 decimal saldoRestante = total - pagoInicial;
                 decimal cuota = (saldoRestante * 1.05m) / 3;
-
                 txtCuotaMensual.Text = cuota.ToString("0.00");
             }
             else
