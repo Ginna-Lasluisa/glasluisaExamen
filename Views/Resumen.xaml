@@ -14,6 +14,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -50,6 +53,6 @@
         <Label Text="Pago Total:" Grid.Row="9" Grid.Column="0"/>
         <Label x:Name="lblPagoTotal" Grid.Row="9" Grid.Column="1"/>
 
-        <Button Text="Cerrar sesión" Clicked="btnCerrarSesion_Clicked" Grid.Row="10" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+        <Button Text="Cerrar sesión" Clicked="btnCerrarSesion_Clicked" Grid.Row="12" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
     </Grid>
 </ContentPage>
