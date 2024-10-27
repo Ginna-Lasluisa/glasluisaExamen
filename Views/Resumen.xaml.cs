@@ -26,7 +26,7 @@ namespace glasluisaExamen.Views
 
         private async void btnCerrarSesion_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync(); // Regresa a la ventana de Login
+            await Navigation.PopToRootAsync();
         }
     }
 }
